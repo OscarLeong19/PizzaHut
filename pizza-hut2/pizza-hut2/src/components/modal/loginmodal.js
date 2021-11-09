@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/modal/loginmodal.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { userLoginAction } from '../../redux/user/userAction';
 function LoginModal({ setOpenModal }) {
     const dispatch = useDispatch();

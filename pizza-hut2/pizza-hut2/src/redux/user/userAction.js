@@ -1,19 +1,24 @@
 import axios from 'axios';
 import { FETCH_USER_SUCCESS, FETCH_USER_FAIL, REGISTER_USER_SUCCESS, REGISTER_USER_FAIL } from '../constants';
+import jwt from 'jsonwebtoken';
 export const userLoginAction = (bodyFormData) => async (dispatch, getState) => {
-    // TODO passing email and password
     try {
-        const { data } = await axios({
+        const { headers } = await axios({
             method: 'POST',
             url: 'http://127.0.0.1:5000/api/user/login',
             data: bodyFormData,
         });
+        const userToken = headers['authorization'];
+        let user = jwt.decode(userToken, { complete: true });
 
+        user = { ...user.payload.sub, userToken: userToken };
         dispatch({
             type: FETCH_USER_SUCCESS,
-            payload: data,
+            payload: user,
         });
-        localStorage.setItem('userdata', JSON.parse(data));
+
+        localStorage.setItem('userdata', JSON.stringify(user));
+        localStorage.setItem();
     } catch (e) {
         dispatch({
             type: FETCH_USER_FAIL,
@@ -23,7 +28,6 @@ export const userLoginAction = (bodyFormData) => async (dispatch, getState) => {
 };
 
 export const userRegisterAction = (bodyFormData) => async (dispatch, getState) => {
-    // TODO passing email and password
     try {
         const { data } = await axios({
             method: 'POST',
