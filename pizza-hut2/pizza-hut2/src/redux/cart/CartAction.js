@@ -6,7 +6,6 @@ export const addToCartAction = (name, id, price) => (dispatch, getState) => {
             id: id,
             name: name,
             price: price,
-            qty: 1,
         },
     });
     localStorage.setItem('cartItems', JSON.stringify(getState().cartReducer.cartItems));
