@@ -9,6 +9,7 @@ import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Cart from './pages/cart';
 
 function App() {
     const [openModal, setOpenModal] = useState(false);
@@ -32,6 +33,7 @@ function App() {
                     <Route path="/" exact component={Home} />
                     <Route path="/about" exact component={About} />
                     <Route path="/contact" exact component={Contact} />
+                    <Route path="/cart" exact component={Cart} />
                 </Switch>
 
                 <Footer />

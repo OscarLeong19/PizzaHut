@@ -36,6 +36,7 @@ function Pizza() {
                             image={pizzaItem.IMG_PATH}
                             name={pizzaItem.NAME}
                             price={pizzaItem.PRICE}
+                            id={pizzaItem.ID}
                         />
                     );
                 })}

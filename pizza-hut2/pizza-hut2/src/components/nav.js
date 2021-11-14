@@ -53,7 +53,7 @@ function Navbar({ setOpenModal, setRegisterModal }) {
                             Register
                         </button>
                         {/* </Link> */}
-                        <Link to="/Cart" class="nav-item nav-link">
+                        <Link to="/cart" class="nav-item nav-link">
                             Cart
                         </Link>
                     </div>
