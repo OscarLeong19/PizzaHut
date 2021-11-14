@@ -22,6 +22,7 @@ function LoginModal({ setOpenModal }) {
                     X{' '}
                 </div>
                 <form method="POST" onSubmit={(e) => submitHandler(e)}>
+                    <h2>login</h2>
                     <input
                         type="email"
                         id="email"
@@ -36,7 +37,7 @@ function LoginModal({ setOpenModal }) {
                         placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <button type="submit" onClick={(e) => submitHandler(e, email, password)}>
+                    <button type="submit" className="log-btn" onClick={(e) => submitHandler(e, email, password)}>
                         Login
                     </button>
                 </form>

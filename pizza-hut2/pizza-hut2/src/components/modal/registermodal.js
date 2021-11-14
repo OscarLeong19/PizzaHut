@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { userRegisterAction } from '../../redux/user/userAction';
+import '../../styles/modal/registermodal.css';
 function RegisModal({ setRegisterModal }) {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
@@ -20,9 +21,12 @@ function RegisModal({ setRegisterModal }) {
     };
 
     return (
-        <div className="RegismodalBackground">
-            <div className="RegimodalContainer">
-                <button onClick={() => setRegisterModal(false)}> X </button>
+        <div id="modal">
+            <div className="modal_window">
+                <div className="close">
+                    <button onClick={() => setRegisterModal(false)}> X </button>
+                </div>
+                <h2>Register</h2>
                 <form method="POST" onSubmit={(e) => submitHandler(e)}>
                     <input
                         type="email"
@@ -64,7 +68,9 @@ function RegisModal({ setRegisterModal }) {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <br />
-                    <button type="submit">Register</button>
+                    <button className="re-btn" type="submit">
+                        Register
+                    </button>
                 </form>
             </div>
         </div>
