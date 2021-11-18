@@ -78,7 +78,7 @@
     font-weight: 300;
 }
 
-button[class*='btn'] {
+.quantity button {
     width: 30px;
     height: 30px;
     background-color: #e1e8ee;
