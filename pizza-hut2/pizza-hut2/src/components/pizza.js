@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 //import { PizzaList } from "../components/pizzadata";
-import Pizzaitems from './pizzaitems';
+import Items from './items';
 import '../styles/pizza.css';
 import axios from 'axios';
 
@@ -29,7 +29,7 @@ function Pizza() {
             <div className="pizzaList">
                 {pizzaList.map((pizzaItem, key) => {
                     return (
-                        <Pizzaitems
+                        <Items
                             key={key}
                             image={pizzaItem.IMG_PATH}
                             name={pizzaItem.NAME}

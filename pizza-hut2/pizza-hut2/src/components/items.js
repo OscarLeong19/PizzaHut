@@ -1,7 +1,7 @@
 import React from 'react';
 import { addToCartAction } from '../redux/cart/CartAction';
 import { useDispatch, useSelector } from 'react-redux';
-function Drinkitems({ image, name, price, id }) {
+function Items({ image, name, price, id }) {
     const dispatch = useDispatch();
     const addToCartHandler = (name, id, price) => {
         dispatch(addToCartAction(name, id, price, image));
@@ -16,4 +16,4 @@ function Drinkitems({ image, name, price, id }) {
     );
 }
 
-export default Drinkitems;
+export default Items;

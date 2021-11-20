@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Drinkitems from './drinkitems';
+import Items from './items';
 import axios from 'axios';
 import '../styles/drink.css';
 
@@ -19,7 +19,7 @@ function Drink() {
             <div className="drinkList">
                 {drinkList.map((drinkItem, key) => {
                     return (
-                        <Drinkitems
+                        <Items
                             key={key}
                             image={drinkItem.IMG_PATH}
                             name={drinkItem.NAME}
