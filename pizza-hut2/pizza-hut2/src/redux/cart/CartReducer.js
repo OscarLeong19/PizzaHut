@@ -12,10 +12,14 @@ export const cartReducer = (state = initalState, action) => {
             if (existItem) {
                 return {
                     cartItems: [...state.cartItems.map((x) => (x.id === item.id ? { ...x, qty: x.qty + 1 } : x))],
+                    status: 'info',
+                    message: 'item added',
                 };
             } else {
                 return {
                     cartItems: [...state.cartItems, { ...action.payload, qty: 1 }],
+                    status: 'info',
+                    message: 'item added',
                 };
             }
         case DELETE_CART_ITEM:
@@ -25,6 +29,8 @@ export const cartReducer = (state = initalState, action) => {
             if (_existItem.qty > 1) {
                 return {
                     cartItems: [...state.cartItems.map((x) => (x.id === __item.id ? { ...x, qty: x.qty - 1 } : x))],
+                    status: 'info',
+                    message: 'item deleted',
                 };
             } else {
                 return {
@@ -33,6 +39,8 @@ export const cartReducer = (state = initalState, action) => {
                             return !(value.id === __item.id);
                         }),
                     ],
+                    status: 'info',
+                    message: 'item deleted',
                 };
             }
 

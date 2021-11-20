@@ -18,7 +18,6 @@ export const userLoginAction = (bodyFormData) => async (dispatch, getState) => {
         });
 
         localStorage.setItem('userdata', JSON.stringify(user));
-        localStorage.setItem();
     } catch (e) {
         dispatch({
             type: FETCH_USER_FAIL,

@@ -7,10 +7,8 @@ function Drink() {
     const [drinkList, setDrink] = useState([]);
     useEffect(() => {
         const fetch = () => {
-            console.log('asdasdasdasdasdasdasdasdaqswd');
             return axios.get('http://127.0.0.1:5000/api/products', { params: { category_id: 3 } }).then((all) => {
                 setDrink(all.data);
-                console.log(all.data);
             });
         };
         setTimeout(fetch, 500);

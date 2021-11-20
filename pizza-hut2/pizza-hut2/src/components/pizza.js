@@ -7,10 +7,8 @@ import axios from 'axios';
 function Pizza() {
     const [pizzaList, setPizzaList] = useState([]);
     useEffect(() => {
-        console.log('asd');
         axios.get('http://127.0.0.1:5000/api/products', { params: { category_id: 1 } }).then((all) => {
             setPizzaList(all.data);
-            console.log(all.data);
         });
     }, []);
     // function addToCartHandler(name, price, id) {
